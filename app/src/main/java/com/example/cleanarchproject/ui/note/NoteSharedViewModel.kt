@@ -1,19 +1,21 @@
 package com.example.cleanarchproject.ui.note
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.cleanarchproject.ui.base.BaseViewModel
+import com.example.cleanarchproject.utils.SingleLiveEvent
 
 class NoteSharedViewModel : BaseViewModel() {
-    private val _openNote = MutableLiveData<Boolean>()
-    val openNote: LiveData<Boolean>
-        get() = _openNote
+    val openNote = SingleLiveEvent<Boolean>()
+    val openAddNewNote = SingleLiveEvent<Boolean>()
 
     init {
         openNote()
     }
 
     private fun openNote() {
-        _openNote.value = true
+        openNote.value = true
+    }
+
+    fun openAddNewNote() {
+        openAddNewNote.value = true
     }
 }
