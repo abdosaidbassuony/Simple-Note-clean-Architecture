@@ -9,17 +9,19 @@ import com.example.cleanarchproject.ui.base.BaseFragment
 import com.example.cleanarchproject.ui.note.NoteSharedViewModel
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.sharedViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 /**
  * A simple [Fragment] subclass.
  */
 class NoteFragment : BaseFragment<FragmentNoteBinding>() {
-    override val viewModel by inject<NoteViewModel>()
+    override val viewModel by viewModel<NoteViewModel>()
     private val sharedViewModel by sharedViewModel<NoteSharedViewModel>()
     override val layoutId: Int = R.layout.fragment_note
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        sharedViewModel.setTitle("All Notes")
         initListeners()
     }
 
