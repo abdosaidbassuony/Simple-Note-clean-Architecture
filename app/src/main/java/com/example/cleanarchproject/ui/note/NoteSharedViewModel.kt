@@ -6,6 +6,7 @@ import com.example.cleanarchproject.utils.SingleLiveEvent
 class NoteSharedViewModel : BaseViewModel() {
     val openNote = SingleLiveEvent<Boolean>()
     val openAddNewNote = SingleLiveEvent<Boolean>()
+    val openEditNote = SingleLiveEvent<Boolean>()
     val title = SingleLiveEvent<String>()
 
 
@@ -19,6 +20,10 @@ class NoteSharedViewModel : BaseViewModel() {
 
     fun openAddNewNote() {
         openAddNewNote.value = true
+    }
+
+    fun openEditNote(){
+        openEditNote.value =true
     }
 
     fun setTitle(title:String){

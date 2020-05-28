@@ -22,6 +22,7 @@ buildscript {
         countryCountPicker = "2.3.8"
         sweetAlertVersion = "1.5.1"
         glide ="4.11.0"
+        roomVersion = '2.2.5'
     }
     ext.kotlin_version = '1.3.61'
     repositories {

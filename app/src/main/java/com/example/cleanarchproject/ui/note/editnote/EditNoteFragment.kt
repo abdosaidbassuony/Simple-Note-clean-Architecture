@@ -24,9 +24,7 @@ class EditNoteFragment : BaseFragment<FragmentEditNoteBinding>() {
     }
 
     companion object{
-        fun newInstance() = EditNoteFragment.apply {
-
-        }
+        fun newInstance() = EditNoteFragment()
     }
 
 }

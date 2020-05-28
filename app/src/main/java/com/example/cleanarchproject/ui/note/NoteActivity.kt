@@ -7,6 +7,7 @@ import com.example.cleanarchproject.R
 import com.example.cleanarchproject.databinding.ActivityNoteBinding
 import com.example.cleanarchproject.ui.base.BaseActivity
 import com.example.cleanarchproject.ui.note.addnote.AddNewNoteFragment
+import com.example.cleanarchproject.ui.note.editnote.EditNoteFragment
 import com.example.cleanarchproject.ui.note.noteFragment.NoteFragment
 import com.example.cleanarchproject.utils.openFragment
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -31,6 +32,9 @@ class NoteActivity : BaseActivity<ActivityNoteBinding>() {
             if (it) {
                 openFragment(R.id.container, AddNewNoteFragment.newInstance(), true)
             }
+        })
+        viewModel.openEditNote.observe(this, Observer {
+            openFragment(R.id.container, EditNoteFragment.newInstance(), true)
         })
         viewModel.title.observe(this, Observer {
             supportActionBar?.title = it
